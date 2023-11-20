@@ -1,12 +1,17 @@
 import { type AppType } from "next/dist/shared/lib/utils";
-import { NextUIProvider } from '@nextui-org/react'
+import { NextUIProvider } from "@nextui-org/react";
 
 import "~/styles/globals.css";
+import Layout from "~/components/Layout";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
-  return <NextUIProvider>
-    <Component {...pageProps} />
-  </NextUIProvider>;
+  return (
+    <NextUIProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </NextUIProvider>
+  );
 };
 
 export default MyApp;
