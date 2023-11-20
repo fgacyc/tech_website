@@ -9,7 +9,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.2.9",
     "@t3-oss/env-nextjs": "^0.7.0",
+    "framer-motion": "^10.16.5",
     "next": "^14.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
