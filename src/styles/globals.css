@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Regular.ttf");
+}
+
+:root {
+  font-family: Roboto;
+  color: white;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
