@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Profile from "~/components/Profile";
 import SectionHeader from "~/components/SectionHeader";
@@ -42,22 +43,31 @@ export default function team() {
   return (
     <>
       <SectionHeader
-        title="Team"
-        desc="Our Professional Team, committed to providing the best service."
+        title="About"
+        desc="The road of our technology development blessed by God."
       ></SectionHeader>
 
       <div className="mt-9 flex flex-col items-center">
-        <div className="grid w-[90%] grid-cols-4 gap-x-2 gap-y-12">
-          {members.map((profile, index) => {
-            return (
-              <Profile
-                key={index}
-                name={profile.name}
-                position={profile.position}
-                profilePicPath={profile.profilePicPath}
-              />
-            );
-          })}
+        <div className="grid w-[90%] grid-cols-2 gap-x-2 gap-y-12">
+          <div className="flex-co flex w-4/5 items-center">
+            <div>
+              FGA KL launched in the home of Dr & Mrs Koh Eng Kiat in Section
+              17; about 40 people. The Chinese Church, Youth Church, Finance
+              Department, Ladies&apos; Fellowship and School of Christian
+              Education & Training were formed in FGA.
+            </div>
+          </div>
+          <div>
+            <div>
+              <Image
+                alt=""
+                src={"/images/Wisma FGA.png"}
+                width={100}
+                height={100}
+                className="w-[80%]"
+              ></Image>
+            </div>
+          </div>
         </div>
       </div>
     </>
