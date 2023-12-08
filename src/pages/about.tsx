@@ -8,38 +8,6 @@ import SectionHeader from "~/components/SectionHeader";
 // 2. Set responsive view
 
 export default function team() {
-  const members = [
-    {
-      name: "Innis",
-      position: "Full Stack Engineer",
-      profilePicPath: "t1",
-    },
-    {
-      name: "Yannis",
-      position: "Full Stack Engineer",
-      profilePicPath: "t2",
-    },
-    {
-      name: "Jia Hao",
-      position: "Full Stack Engineer",
-      profilePicPath: "t3",
-    },
-    {
-      name: "Innis",
-      position: "Full Stack Engineer",
-      profilePicPath: "t1",
-    },
-    {
-      name: "Yannis",
-      position: "Full Stack Engineer",
-      profilePicPath: "t2",
-    },
-    {
-      name: "Jia Hao",
-      position: "Full Stack Engineer",
-      profilePicPath: "t3",
-    },
-  ];
   return (
     <>
       <SectionHeader
