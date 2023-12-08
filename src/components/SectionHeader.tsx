@@ -6,7 +6,7 @@ interface SectionHeaderProps {
   desc: string;
 }
 
-export default function SectionHeader(props: SectionHeaderProps) {
+const SectionHeader = (props: SectionHeaderProps) => {
   return (
     <>
       <div className="flex flex-col items-center bg-[#1d2129] pt-12 text-white">
@@ -17,4 +17,5 @@ export default function SectionHeader(props: SectionHeaderProps) {
       </div>
     </>
   );
-}
+};
+export default SectionHeader;

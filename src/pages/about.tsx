@@ -3,10 +3,9 @@ import React from "react";
 import SectionHeader from "~/components/SectionHeader";
 
 // TODO
-// 1. Add link to GitHub etc.
-// 2. Set responsive view
+// 1. Set responsive view
 
-export default function team() {
+const About = () => {
   return (
     <>
       <div className="bg-[#1d2129] text-white">
@@ -41,4 +40,6 @@ export default function team() {
       </div>
     </>
   );
-}
+};
+
+export default About;

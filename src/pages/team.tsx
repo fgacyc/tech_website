@@ -1,12 +1,13 @@
 import React from "react";
 import Profile from "~/components/Profile";
 import SectionHeader from "~/components/SectionHeader";
+import JoinCard from "~/components/team/JoinCard";
 
 // TODO
 // 1. Add link to GitHub etc.
 // 2. Set responsive view
 
-export default function team() {
+const Team = () => {
   const members = [
     {
       name: "Innis",
@@ -61,7 +62,11 @@ export default function team() {
             })}
           </div>
         </div>
+
+        <JoinCard />
       </div>
     </>
   );
-}
+};
+
+export default Team;
