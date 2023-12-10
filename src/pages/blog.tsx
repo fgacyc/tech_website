@@ -1,41 +1,34 @@
-import React from "react";
+import React, { use, useEffect } from "react";
 import BlogCard from "~/components/blog/BlogCard";
+import { getReq } from "~/api/requests";
+
+type Blog = {
+  id: number;
+  cover: string;
+  title: string;
+  description: string;
+  content: string;
+  author: string;
+  avatar: string;
+  created_at: string;
+  updated_at: string;
+};
 
 const Blog = () => {
-  const blogs = [
-    {
-      title: "Optimize website performance",
-      desc: "In this article, we will introduce some skills and tools to optimize the performance of the website to help you improve the user experience and the ranking of the website.",
-      author: "Innis",
-      date: "2023-11-18 03:06:45",
-      imgPath: "/images/blog/blog_image_1.png",
-      profilePicPath: "/images/blog/blog_profile_1.png",
-    },
-    {
-      title: "Optimize website performance",
-      desc: "In this article, we will introduce some skills and tools to optimize the performance of the website to help you improve the user experience and the ranking of the website.",
-      author: "Innis",
-      date: "2023-11-18 03:06:45",
-      imgPath: "/images/blog/blog_image_2.png",
-      profilePicPath: "/images/blog/blog_profile_2.png",
-    },
-    {
-      title: "Optimize website performance",
-      desc: "In this article, we will introduce some skills and tools to optimize the performance of the website to help you improve the user experience and the ranking of the website.",
-      author: "Innis",
-      date: "2023-11-18 03:06:45",
-      imgPath: "/images/blog/blog_image_3.png",
-      profilePicPath: "/images/blog/blog_profile_3.png",
-    },
-    {
-      title: "Optimize website performance",
-      desc: "In this article, we will introduce some skills and tools to optimize the performance of the website to help you improve the user experience and the ranking of the website.",
-      author: "Innis",
-      date: "2023-11-18 03:06:45",
-      imgPath: "/images/blog/blog_image_4.png",
-      profilePicPath: "/images/blog/blog_profile_4.png",
-    },
-  ];
+  const [blogs, setBlogs] = React.useState([]);
+
+  useEffect(() => {
+    const getBlogs = async () => {
+      try {
+        let res = await getReq("/posts");
+        setBlogs(res);
+      } catch (error) {
+        console.error("Error during getBlogs:", error);
+      }
+    };
+    getBlogs();
+  }, []);
+
   return (
     <div className="h-min-screen bg-[#1d2129] px-12">
       <div className="flex flex-col  py-9 xl:flex-row xl:items-center xl:justify-between">
@@ -51,19 +44,20 @@ const Blog = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-between">
-        {blogs.map((blog, index) => {
-          return (
-            <BlogCard
-              key={index}
-              title={blog.title}
-              desc={blog.desc}
-              author={blog.author}
-              date={blog.date}
-              imgPath={blog.imgPath}
-              profilePicPath={blog.profilePicPath}
-            />
-          );
-        })}
+        {blogs &&
+          blogs.map((blog: Blog, index) => {
+            return (
+              <BlogCard
+                key={index}
+                title={blog.title}
+                desc={blog.description}
+                author={blog.author}
+                date={blog.updated_at}
+                imgPath={blog.cover}
+                profilePicPath={blog.avatar}
+              />
+            );
+          })}
       </div>
     </div>
   );

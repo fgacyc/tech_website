@@ -11,6 +11,9 @@ interface BlogCardProps {
 }
 
 const BlogCard = (props: BlogCardProps) => {
+  const changeExtensionFromJPGtoPNG = (fileName: string): string =>
+    fileName.endsWith(".jpg") ? fileName.slice(0, -4) + ".png" : fileName;
+
   return (
     <div className="mb-16 mr-5 flex flex-col md:mb-28 md:flex-row">
       <Image
@@ -26,7 +29,7 @@ const BlogCard = (props: BlogCardProps) => {
         <h5>{props.desc}</h5>
         <div className="mt-5 flex md:mt-10">
           <Image
-            src={props.profilePicPath}
+            src={changeExtensionFromJPGtoPNG(props.profilePicPath)}
             alt="Blog Profile"
             width={50}
             height={50}
