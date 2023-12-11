@@ -24,8 +24,12 @@ export default function Profile(props: ProfileProps) {
           width={200}
           height={200}
         />
-        <div className="mt-4 font-bold">{props.name}</div>
-        <div className="mt-1">{props.position}</div>
+        <div className="mt-4">
+          <h5 className="font-bold">{props.name}</h5>
+        </div>
+        <div className="mt-1">
+          <h5>{props.position}</h5>
+        </div>
         <div className="flex flex-col items-center">
           <div className="mt-1 flex">
             <GitHubIcon href="https://www.github.com"></GitHubIcon>
