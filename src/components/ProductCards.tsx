@@ -1,5 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Image } from "@nextui-org/react";
+import Link from 'next/link'
+
+type Products = {
+  content: string;
+  cover: string;
+  created_at: string;
+  description:string;
+  id: number;
+  title:string;
+  updated_at:string
+}
 
 interface ProductCardProps {
   src: string;
@@ -10,29 +21,42 @@ interface ProductCardProps {
 
 const ProductCard:React.FC<ProductCardProps> = ( {src, alt, h3, span} ) => {
   return (
-    <div>
+    <div className='flex flex-col w-full relative h-[300px]'>
       <Image
+        className=''
         src={src}
         alt={alt}
-        width={200}
-        height={200}
-        className='border'
-      ></Image>
-      <h3>{h3}</h3>
-      <span>{span}</span>
+        width={"100%"}
+        height={250}
+      />
+      <div className='text-center'>
+        <h3 className='truncate w-full'>{h3}</h3>
+        <span className='flex text-[#adb5bd] w-full'>{span}</span>
+      </div>
     </div>
   )
 }
 
 const ProductCards = () => {
+  const [productCardList, setProductCardList] = useState<Products[]>([])
+
+  useEffect(()=> {
+    const fetchData = async () => {
+      const data = await fetch("https://website.fgacyc.com/api/tech/products")
+      await data.json().then((data: Products[]) => {
+        console.log(data)
+        setProductCardList(data)
+      })  
+    }
+    void fetchData()
+  }, [])
+
   return (
-    <div className='flex flex-wrap'>
-      <ProductCard src='./images/image1.png' alt='image1' h3='Data Analysis Tool' span='Through advnaced data analysis algorithms, it helps you to tap...'/>
-      <ProductCard src='./images/image2.png' alt='image2' h3='Data Analysis Tool' span='Through advnaced data analysis algorithms, it helps you to tap...'/>
-      <ProductCard src='./images/image3.png' alt='image3' h3='Data Analysis Tool' span='Through advnaced data analysis algorithms, it helps you to tap...'/>
-      <ProductCard src='./images/image4.png' alt='image4' h3='Data Analysis Tool' span='Through advnaced data analysis algorithms, it helps you to tap...'/>
-      <ProductCard src='./images/image1.png' alt='image1' h3='Data Analysis Tool' span='Through advnaced data analysis algorithms, it helps you to tap...'/>
-    </div>
+    <Link href={"https://www.imgur.com/a/G6rU8"} target='_blank' className='grid xl:grid-cols-4 gap-20 pl-20 pr-20'>
+      {productCardList.map((data, i) => (
+        <ProductCard key={i} src={data.cover} alt={data.title} h3={data.title} span={data.description} />
+      ))}
+    </Link>
   )
 }
 

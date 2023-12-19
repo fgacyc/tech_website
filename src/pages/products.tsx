@@ -4,8 +4,10 @@ import ProductCards from '~/components/ProductCards'
 const Products = () => {
   return (
     <>
-      <h1>Products</h1>
-      <h3>Series of digital products fully meet your needs</h3>
+      <div className="m-10 ml-17">
+        <h1>Products</h1>
+        <h3>Series of digital products fully meet your needs</h3>
+      </div>
       <ProductCards />
     </>
   )
