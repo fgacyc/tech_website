@@ -6,42 +6,44 @@ import InstagramIcon from "./Icons/InstagramIcon";
 import LinkedinIcon from "./Icons/LinkedinIcon";
 import MailIcon from "./Icons/MailIcon";
 import TwitterIcon from "./Icons/TwitterIcon";
+import { TeamMember } from "~/pages/team";
 
 interface ProfileProps {
-  name: string;
-  position: string;
-  profilePicPath: string;
+  member: TeamMember;
 }
 
 export default function Profile(props: ProfileProps) {
+  const changeExtensionFromJPGtoPNG = (fileName: string): string =>
+    fileName.endsWith(".jpg") ? fileName.slice(0, -4) + ".png" : fileName;
+
   return (
     <>
       <div className="flex flex-col items-center">
         <Image
           alt="Card background"
           className="rounded-full object-cover"
-          src={"/images/profile-pic/" + props.profilePicPath + ".png"}
+          src={changeExtensionFromJPGtoPNG(props.member.avatar)}
           width={200}
           height={200}
         />
         <div className="mt-4">
-          <h5 className="font-bold">{props.name}</h5>
+          <h5 className="font-bold">{props.member.name}</h5>
         </div>
         <div className="mt-1">
-          <h5>{props.position}</h5>
+          <h5>{props.member.position}</h5>
         </div>
         <div className="flex flex-col items-center">
           <div className="mt-1 flex">
-            <GitHubIcon href="https://www.github.com"></GitHubIcon>
-            <InstagramIcon href="https://www.github.com"></InstagramIcon>
-            <LinkedinIcon href="https://www.github.com"></LinkedinIcon>
-            <TwitterIcon href="https://www.github.com"></TwitterIcon>
-            <MailIcon href="https://www.github.com"></MailIcon>
-            <SocialMediaIcon
+            <GitHubIcon href={props.member.github_url}></GitHubIcon>
+            <InstagramIcon href={props.member.instagram_url}></InstagramIcon>
+            <LinkedinIcon href={props.member.linkedin_url}></LinkedinIcon>
+            <TwitterIcon href={props.member.twitter_url}></TwitterIcon>
+            <MailIcon href={"mailto: " + props.member.email}></MailIcon>
+            {/* <SocialMediaIcon
               href={"https://www.facebook.com/FGACYC/"}
               src={"facebook"}
               alt={"Facebook Icon"}
-            ></SocialMediaIcon>
+            ></SocialMediaIcon> */}
           </div>
         </div>
       </div>
