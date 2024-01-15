@@ -4,10 +4,6 @@ import Profile from "~/components/Profile";
 import SectionHeader from "~/components/SectionHeader";
 import JoinCard from "~/components/team/JoinCard";
 
-// TODO
-// 1. Add link to GitHub etc.
-// 2. Set responsive view
-
 export type TeamMember = {
   avatar: string;
   created_at: string;
@@ -48,7 +44,7 @@ const Team = () => {
         ></SectionHeader>
 
         <div className="mt-9 flex flex-col items-center ">
-          <div className="grid w-[90%] grid-cols-4 gap-x-2 gap-y-12">
+          <div className="grid w-[90%] grid-cols-1 gap-x-2 gap-y-12 md:grid-cols-3 lg:grid-cols-4">
             {members.map((m, index) => {
               return <Profile key={index} member={m} />;
             })}
