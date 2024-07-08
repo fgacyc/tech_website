@@ -95,8 +95,16 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className={"text-center m-10"}>
-                © {new Date().getFullYear()} FGA TECH. All Rights Reserved.
+            <div className={"text-center my-10 relative"}>
+                <div className={"absolute left-0"}>
+                    <div></div>
+                    <div>
+                       <a href="https://www.freepik.com/vectors/background">
+                           System Status: <span className={"text-green-500"}>Operational</span>
+                       </a>
+                    </div>
+                </div>
+                <div>© {new Date().getFullYear()} FGA TECH. All Rights Reserved.</div>
             </div>
         </div>
     )
