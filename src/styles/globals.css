@@ -9,21 +9,26 @@
 
 :root {
   font-family: Segoe UI;
+  background-color: #1d2129;
+  user-select: none;
 }
 
 h1 {
   font-size: 3rem;
   font-weight: 700;
+  color: #ffffff;
 }
 
 h2 {
   font-size: 2rem;
   font-weight: 600;
+  color: #ffffff;
 }
 
 h3 {
   font-size: 1.5rem;
   font-weight: 400;
+  color: #ffffff;
 }
 
 h4 {
