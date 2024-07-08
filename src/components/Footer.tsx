@@ -99,7 +99,8 @@ const Footer = () => {
                 <div className={"absolute left-0"}>
                     <div></div>
                     <div>
-                       <a href="https://www.freepik.com/vectors/background">
+                       <a href="https://status.fgacyc.com/status/host-status">
+                           <span className={"h-2 w-2 bg-green-500 rounded-full inline-block mr-2"}></span>
                            System Status: <span className={"text-green-500"}>Operational</span>
                        </a>
                     </div>
