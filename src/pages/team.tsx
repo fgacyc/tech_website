@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { getReq } from "~/api/requests";
 import Profile from "~/components/Profile";
 import SectionHeader from "~/components/SectionHeader";
 import JoinCard from "~/components/team/JoinCard";
@@ -18,21 +17,25 @@ export type TeamMember = {
   updated_at: string;
 };
 
+const HOST_URL = process.env.NEXT_PUBLIC_HOST_URL;
+
+
 const Team = () => {
   const [members, setMembers] = React.useState<TeamMember[]>([]);
 
   useEffect(() => {
     const getMembers = async () => {
       try {
-        let res = await getReq("/members");
-        console.log(res);
+        const  res = await fetch(`${HOST_URL}/members`);
+        const data: TeamMember[] = await res.json() as TeamMember[];
+        console.log(data);
 
-        setMembers(res);
+        setMembers(data);
       } catch (error) {
         console.error("Error during getBlogs:", error);
       }
     };
-    getMembers();
+    void getMembers();
   }, []);
 
   return (

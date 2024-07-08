@@ -1,6 +1,5 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import BlogCard from "~/components/blog/BlogCard";
-import { getReq } from "~/api/requests";
 
 type Blog = {
   id: number;
@@ -14,22 +13,25 @@ type Blog = {
   updated_at: string;
 };
 
+const HOST_URL = process.env.NEXT_PUBLIC_HOST_URL;
+
 const Blog = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [searchedBlogs, setSearchedBlogs] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [searchedBlogs, setSearchedBlogs] = useState<Blog[]>([]);
+  const [searchText, setSearchText] = useState<string>("");
 
   useEffect(() => {
     const getBlogs = async () => {
       try {
-        let res = await getReq("/posts");
-        setBlogs(res);
-        setSearchedBlogs(res);
+        const res = await fetch(`${HOST_URL}/posts`);
+        const data  :Blog[] = await res.json() as Blog[];
+        setBlogs(data);
+        setSearchedBlogs(data);
       } catch (error) {
         console.error("Error during getBlogs:", error);
       }
     };
-    getBlogs();
+    void getBlogs();
   }, []);
 
   const handleSearch = () => {
