@@ -52,11 +52,15 @@ const ProductCards = () => {
   }, [])
 
   return (
-    <Link href={"https://www.imgur.com/a/G6rU8"} target='_blank' className='grid xl:grid-cols-4 gap-20 pl-20 pr-20'>
-      {productCardList.map((data, i) => (
-        <ProductCard key={i} src={data.cover} alt={data.title} h3={data.title} span={data.description} />
-      ))}
-    </Link>
+     <div className={"grid xl:grid-cols-4 gap-20 pl-20 pr-20"}>
+       {
+         productCardList.map((data, index) => (
+           <Link href={`https://www.imgur.com/a/${data.id}`} target='_blank' key={index}>
+             <ProductCard src={data.cover} alt={data.title} h3={data.title} span={data.description} />
+              </Link>
+            ))
+       }
+     </div>
   )
 }
 
