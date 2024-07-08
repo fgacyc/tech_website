@@ -3,8 +3,8 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const JoinCard = () => {
   return (
-    <div className="mt-12 flex w-full flex-col items-center pb-12">
-      <div className="w-[90%] rounded-xl bg-gradient-to-r from-slate-900 to-slate-50 pl-12 pt-7 text-white">
+    <div className="p-12 flex w-full flex-col items-center pb-12">
+      <div className="w-full rounded-xl bg-gradient-to-r from-slate-900 to-slate-50 pl-12 pt-7 text-white">
         <div className="flex font-black">
           <h2>FGA Tech Team</h2>
         </div>
