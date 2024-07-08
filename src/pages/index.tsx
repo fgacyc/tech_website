@@ -70,7 +70,7 @@ export default function Home() {
                   One Byte at a Time
               </div>
               <div className={"text-base text-[#9CADCE] mt-4 "}>
-                  Empowering Churches Worldwide with Innovative Technology Solutions to Spread God's Word
+                  Empowering Churches Worldwide with Innovative Technology Solutions to Spread God&#39;s Word
               </div>
               <img src="/images/index/bg.png" alt="background" className={"absolute bottom-1/2 transform translate-y-1/2"}/>
               <img src="/images/index/phone-3.png" alt="phones" className={"absolute right-12 bottom-1/2 transform translate-y-1/2"}/>
