@@ -18,7 +18,7 @@ const BlogCard = (props: BlogCardProps) => {
       <img
         src={props.imgPath}
         alt="Blog Image"
-        className="mr-4 rounded-xl w-full h-[250px] cursor-pointer object-cover "
+        className="mr-4 rounded-t-xl w-full h-[250px] cursor-pointer object-cover "
       ></img>
       <div className="mt-5 text-white md:mt-0 p-4">
         <span className="text-gray-600 bg-[rgb(229,231,235)] py-1 px-2 leading-[30px] rounded">{props.category}</span>
