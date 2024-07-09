@@ -21,11 +21,11 @@ const BlogCard = (props: BlogCardProps) => {
         alt="Blog Image"
         width={250}
         height={250}
-        className="mr-4 rounded-xl w-full object-cover h-[250px]"
+        className="mr-4 rounded-xl w-full object-cover h-[250px] cursor-pointer"
       ></Image>
       <div className="mt-5 text-white md:mt-0">
         <h6 className="text-[#00f]">Tech</h6>
-        <h4 className="my-2.5 font-bold h-[60px]">{props.title}</h4>
+        <h4 className="my-2.5 font-bold h-[60px] cursor-pointer">{props.title}</h4>
         <h5 className={"line-clamp-5"}>{props.desc}</h5>
         <div className="mt-5 flex md:mt-10">
           <Image
@@ -33,7 +33,7 @@ const BlogCard = (props: BlogCardProps) => {
             alt="Blog Profile"
             width={50}
             height={50}
-            className="mr-4 rounded-full"
+            className="mr-4 rounded-full "
           ></Image>
           <div>
             <h6>{props.author}</h6>
