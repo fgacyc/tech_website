@@ -24,12 +24,12 @@ const Header = () => {
             >
                 <img src="/FGA_Tech_Logo.png" alt="FGA_Tech_Logo" className={"w-14 h-14  sm:float-right "}/>
             </div>
-            <div className={"flex w-full sm:justify-start justify-end items-center"}>
+            <div className={"flex w-full sm:justify-start justify-end "}>
                 <div className={"md:text-4xl sm:text-2xl mr-12 cursor-pointer py-4 sm:block hidden "}
                      onClick={() => router.push("/")}
                 >FGA TECH
                 </div>
-                <div className={" w-[300px] justify-between text-lg sm:flex hidden items-center"}>
+                <div className={" w-[300px] justify-between text-lg sm:flex hidden  h-18 leading-[72px] "}>
                     {
                         navItems.map((navItem) => {
                             return <Link href={navItem.link} key={navItem.name} className={"cursor-pointer"}>
