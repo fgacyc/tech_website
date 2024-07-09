@@ -26,7 +26,7 @@ export default function ProductsPage({allProductData}: { allProductData: Product
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps  = async () => {
   const allProductData:Product[] = await getProducts();
   return {
     props: {
