@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+import UIHead from "~/components/head";
 
 export default function PrivacyPolicyPage() {
     const [language, setLanguage] = useState("en");
@@ -14,6 +15,7 @@ export default function PrivacyPolicyPage() {
             {
                 language === "zh"
                     ? <div className="bg-white rounded-lg shadow-md p-8 overflow-y-scroll text-white">
+                        <UIHead title={"FGA TECH - 隐私政策"}/>
                         <div className="text-2xl font-bold mb-4">隐私政策</div>
 
                         <div className="text-xl font-semibold mb-2">1. 介绍</div>
@@ -75,6 +77,7 @@ export default function PrivacyPolicyPage() {
                     </div>
 
                     : <div className="bg-white rounded-lg shadow-md p-8 overflow-y-scroll h-screen">
+                        <UIHead title={"FGA TECH - Privacy Policy"}/>
                         <div className="text-2xl font-bold mb-4">Privacy Policy</div>
 
                         <div className="text-xl font-semibold mb-2">1. Introduction</div>

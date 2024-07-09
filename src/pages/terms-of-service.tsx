@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+import UIHead from "~/components/head";
 
 export default function TermsOfServicePage() {
     const [language, setLanguage] = useState("en");
@@ -15,6 +16,7 @@ export default function TermsOfServicePage() {
             {
                 language === "zh"
                     ? <div className="bg-white rounded-lg  p-8  overflow-y-scroll">
+                        <UIHead title={"FGA TECH - 服务条款"}/>
                         <div className="text-2xl font-bold mb-4 ">服务条款</div>
 
                         <div className="text-xl font-semibold mb-2">1. 介绍</div>
@@ -62,6 +64,7 @@ export default function TermsOfServicePage() {
                         <div className={"h-10"}></div>
                     </div>
                     : <div className="bg-white rounded-lg shadow-md p-8 h-screen overflow-y-scroll">
+                        <UIHead title={"FGA TECH - Terms of Service"}/>
                         <div className="text-2xl font-bold mb-4">Terms of Service</div>
 
                         <div className="text-xl font-semibold mb-2">1. Introduction</div>
