@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BlogCard from "~/components/blog/BlogCard";
 import Head from "next/head";
+import UIHead from "~/components/head";
 
 type Blog = {
   id: number;
@@ -48,10 +49,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-[#1d2129] px-12">
-      <Head>
-        <title>FGA TECH - Blog</title>
-        <link rel="icon" href="/FGA_TECH.png" />
-      </Head>
+      <UIHead title={"FGA TECH - Blog"}/>
       <div className="flex flex-col  py-9 xl:flex-row xl:items-center xl:justify-between">
         <div className="mb-5 text-white xl:mb-0">
           <h1 className="mb-1.5">Blog</h1>
@@ -59,8 +57,8 @@ const Blog = () => {
         </div>
         <div className="relative h-12 w-[280px] rounded-xl border border-[#8d8d8d] bg-[#252525] sm:w-[327px]">
           <input
-            type="text"
-            className="h-12 w-[225px] bg-transparent pl-3 text-white focus:outline-none sm:w-[275px]"
+              type="text"
+              className="h-12 w-[225px] bg-transparent pl-3 text-white focus:outline-none sm:w-[275px]"
             onChange={(e) => setSearchText(e.target.value)}
           />
           <div className="absolute right-4 top-0 flex h-12 items-center justify-center">
