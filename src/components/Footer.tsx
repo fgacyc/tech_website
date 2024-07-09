@@ -28,27 +28,27 @@ const Footer = () => {
     const socialMedia = [
         // github facebook youtube instagram thread
         {
-            image: "/icons/github.png",
+            image: "/icons/github.svg",
             alt: "GitHub",
             href: "https://github.com/fgacyc",
         },
         {
-            image: "/icons/instagram.png",
+            image: "/icons/instagram.svg",
             alt: "Instagram",
             href: "https://www.instagram.com/fga_tech/"
         },
         {
-            image: "/icons/facebook.png",
+            image: "/icons/facebook.svg",
             alt: "Facebook",
             href: "https://www.facebook.com/FGATECH/"
         },
         {
-            image: "/icons/thread.png",
+            image: "/icons/thread.svg",
             alt: "Twitter",
             href: "https://twitter.com/fga_tech"
         },
         {
-            image: "/icons/youtube.png",
+            image: "/icons/youtube.svg",
             alt: "YouTube",
             href: "https://www.youtube.com/channel/UCX1V3f5zXZy0JZQJ6rX4aJQ"
         },
