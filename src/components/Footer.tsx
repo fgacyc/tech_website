@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Status from "~/components/status";
 
 const Footer = () => {
     const navItems = [
@@ -57,9 +58,9 @@ const Footer = () => {
         <div className={"text-white px-12 pt-12"}>
             <div className={"flex justify-between flex-wrap"}>
                 <img src="/FGA_Tech_Logo.png" alt="FGA_Tech_Logo" className={"w-20 h-20 float-right"}/>
-                <div>
+                <div className={"mb-4"}>
                     <div className={"font-bold mb-3"}>Navigate</div>
-                    <div className={"flex flex-col gap-2"}>
+                    <div className={"flex flex-col gap-2 "}>
                         {
                             navItems.map((navItem) => {
                                 return <Link href={navItem.link} key={navItem.name} className={"cursor-pointer"}>
@@ -69,7 +70,7 @@ const Footer = () => {
                         }
                     </div>
                 </div>
-                <div className={""}>
+                <div className={"mb-4"}>f
                     <div className={"font-bold mb-3"}>Products</div>
                     <div className={"flex flex-col gap-2"}>
                         {
@@ -97,14 +98,9 @@ const Footer = () => {
             </div>
             <div className={"text-center my-10 relative"}>
                 <div className={"absolute left-0"}>
-                    <div></div>
-                    <div>
-                       <a href="https://status.fgacyc.com/status/host-status">
-                           <span className={"h-2 w-2 bg-green-500 rounded-full inline-block mr-2"}></span>
-                           System Status: <span className={"text-green-500"}>Operational</span>
-                       </a>
-                    </div>
+                    <Status className={"sm:block hidden "}/>
                 </div>
+                <Status className={"sm:hidden block mb-2"}/>
                 <div>© {new Date().getFullYear()} FGA TECH. All Rights Reserved.</div>
             </div>
         </div>
