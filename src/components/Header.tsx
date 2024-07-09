@@ -24,8 +24,8 @@ const Header = () => {
             >
                 <img src="/FGA_Tech_Logo.png" alt="FGA_Tech_Logo" className={"w-14 h-14  sm:float-right "}/>
             </div>
-            <div className={"flex w-full sm:justify-start justify-end"}>
-                <div className={"text-4xl mr-12 cursor-pointer py-4 sm:block hidden"}
+            <div className={"flex w-full sm:justify-start justify-end items-center"}>
+                <div className={"md:text-4xl sm:text-2xl mr-12 cursor-pointer py-4 sm:block hidden "}
                      onClick={() => router.push("/")}
                 >FGA TECH
                 </div>

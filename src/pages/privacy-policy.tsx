@@ -2,12 +2,12 @@ import {useEffect, useState} from "react";
 
 export default function PrivacyPolicyPage() {
     const [language, setLanguage] = useState("en");
-    useEffect(() => {
-        const lang = navigator.language.split("-")[0]
-        if (!lang) return;
-        console.log("lang", lang)
-        setLanguage(lang);
-    }, []);
+    // useEffect(() => {
+    //     const lang = navigator.language.split("-")[0]
+    //     if (!lang) return;
+    //     console.log("lang", lang)
+    //     setLanguage(lang);
+    // }, []);
     return (
         <div>
             {

@@ -55,7 +55,7 @@ const Blog = () => {
             title="Blog"
             desc="Your official source for FGA Tech Research news and updates."
         ></SectionHeader>
-        <div className="relative h-12  rounded-xl border border-[#8d8d8d] bg-[#252525] sm:w-[327px] w-full  sm:mr-12 mr-6 mt-4 ml-6">
+        <div className="relative h-12  rounded-xl border border-[#8d8d8d] bg-[#252525] sm:w-[327px] w-full  sm:mx-12 mx-6 mt-4">
           <input
               type="text"
               className="h-12 w-[225px] bg-transparent pl-3 text-white focus:outline-none sm:w-[275px]"
