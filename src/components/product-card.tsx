@@ -20,7 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({src, alt, title, span, url}) =
             />
             <div className='text-center'>
                 <a href={url} target='_blank' className='cursor-pointer'>
-                    <h3 className='truncate w-full cursor-pointer'>{title}</h3>
+                    <div className='truncate w-full cursor-pointer text-white text-xl mt-2 mb-3'>{title}</div>
                 </a>
                 <span className='flex text-[#adb5bd] w-full'>{span}</span>
             </div>
