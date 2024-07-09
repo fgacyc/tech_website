@@ -21,13 +21,11 @@ interface ProductCardProps {
 
 const ProductCard:React.FC<ProductCardProps> = ( {src, alt, h3, span} ) => {
   return (
-    <div className='flex flex-col w-full relative h-[300px]'>
-      <Image
-        className=''
+    <div className='flex flex-col  relative object-cover '>
+      <img
         src={src}
         alt={alt}
-        width={"100%"}
-        height={250}
+        className={"object-cover rounded-lg"}
       />
       <div className='text-center'>
         <h3 className='truncate w-full'>{h3}</h3>
@@ -52,10 +50,13 @@ const ProductCards = () => {
   }, [])
 
   return (
-     <div className={"grid xl:grid-cols-4 gap-20 pl-20 pr-20"}>
+     <div className={"grid sm:grid-cols-4 grid-cols-1 sm:gap-20 gap-10 sm:px-12 px-6 w-full"}>
        {
          productCardList.map((data, index) => (
-           <Link href={`https://www.imgur.com/a/${data.id}`} target='_blank' key={index}>
+           <Link href={`https://www.imgur.com/a/${data.id}`}
+                 target='_blank'
+                 className={"cursor-pointer "}
+                 key={index}>
              <ProductCard src={data.cover} alt={data.title} h3={data.title} span={data.description} />
               </Link>
             ))

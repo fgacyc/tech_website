@@ -17,11 +17,17 @@ const Header = () => {
 
 
     return (
-        <div className={"bg-black text-white flex px-12 justify-between h-[72px] w-full"}>
-            <div className={"flex w-full justify-between "}>
-                <div className={"text-4xl mr-12 cursor-pointer py-4"}
-                        onClick={() => router.push("/")}
-                >FGA TECH</div>
+        <div className={"bg-black text-white flex sm:px-12 px-6 justify-between h-[72px] w-full"}>
+            <div className={"flex items-center w-[72px] sm:hidden "}
+                    onClick={() => router.push("/")}
+            >
+                <img src="/FGA_Tech_Logo.png" alt="FGA_Tech_Logo" className={"w-14 h-14  sm:float-right "}/>
+            </div>
+            <div className={"flex w-full sm:justify-start justify-end"}>
+                <div className={"text-4xl mr-12 cursor-pointer py-4 sm:block hidden"}
+                     onClick={() => router.push("/")}
+                >FGA TECH
+                </div>
                 <div className={" w-[300px] justify-between text-lg sm:flex hidden items-center"}>
                     {
                         navItems.map((navItem) => {
@@ -36,7 +42,7 @@ const Header = () => {
                     onClick={() => setIsOpen(!isOpen)}
                 />
                 <Menu right
-                      customBurgerIcon={ false }
+                      customBurgerIcon={false}
                       isOpen={isOpen}
                       onStateChange={(state) => setIsOpen(state.isOpen)}
                 >
@@ -49,8 +55,10 @@ const Header = () => {
                     }
                 </Menu>
             </div>
-            <div className={" items-center sm:flex hidden"}>
-                <img src="/FGA_Tech_Logo.png" alt="FGA_Tech_Logo" className={"w-14 h-14 float-right "}/>
+            <div className={" items-center w-[72px] sm:flex hidden"}
+                 onClick={() => router.push("/")}
+            >
+                <img src="/FGA_Tech_Logo.png" alt="FGA_Tech_Logo" className={"w-14 h-14  sm:float-right "}/>
             </div>
         </div>
     )

@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
 import { Button } from '@nextui-org/react'
+import {IoIosArrowForward} from "react-icons/io";
+import React from "react";
 
 export default function Home() {
+
+
     const digitalSolutions = [
         {
             title: "Intelligent analysis",
@@ -66,7 +70,7 @@ export default function Home() {
             <img src="/images/index/phone-3.png" alt="phones"
                  className={"absolute right-12 bottom-1/2 transform translate-y-1/2 sm:block hidden"}/>
             <div
-                className="font-bold text-[48px] text-white h-[calc(100vh-88px)] flex flex-col items-start justify-center px-12 relative z-50">
+                className="font-bold text-[48px] text-white h-[calc(100vh-88px)] flex flex-col items-start justify-center relative z-50 sm:px-12 px-6">
                 <div className={""}>
                     Spreading the Gospel,
                 </div>
@@ -80,7 +84,7 @@ export default function Home() {
             </div>
 
             {/*  section2  fag tech info */}
-            <div className={"flex px-12 items-center flex-wrap"}>
+            <div className={"flex items-center flex-wrap sm:px-12 px-6"}>
                 <img src="/images/index/desktop.png" alt="desktop" className={"sm:w-1/2 w-full mb-8"}/>
                 <div className={"text-white sm:pl-4"}>
                     <div className={"sm:text-[48px] text-[32px]"}>FGA Technology</div>
@@ -90,14 +94,15 @@ export default function Home() {
                         and professional team, we help the church realize digital transformation and improve its ability
                         to preach the gospel.
                     </div>
-                    <button className={"rounded-full bg-[#1A2F8A] px-4 py-2"}>
+                    <button className={"rounded-full bg-[#1A2F8A] px-4 py-2 flex items-center "}>
                         Learn more
+                        <IoIosArrowForward className={"ml-5"} />
                     </button>
                 </div>
             </div>
 
             {/*  section3 Digital solutions */}
-            <div className={"flex flex-col items-center my-32 px-12"}>
+            <div className={"flex flex-col items-center my-32 sm:px-12 px-6"}>
                 <div className={"sm:text-[48px] text-[32px]"}>Digital solutions</div>
                 <div className={"mt-2 mb-8"}>We provide a variety of efficient digital solutions to help you improve
                     business efficiency and user experience.

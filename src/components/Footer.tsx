@@ -55,7 +55,7 @@ const Footer = () => {
     ]
 
     return (
-        <div className={"text-white px-12 pt-12"}>
+        <div className={"text-white sm:px-12 px-6 pt-12"}>
             <div className={"flex justify-between flex-wrap"}>
                 <img src="/FGA_Tech_Logo.png" alt="FGA_Tech_Logo" className={"w-20 h-20 float-right"}/>
                 <div className={"mb-4"}>
@@ -70,7 +70,7 @@ const Footer = () => {
                         }
                     </div>
                 </div>
-                <div className={"mb-4"}>f
+                <div className={"mb-4"}>
                     <div className={"font-bold mb-3"}>Products</div>
                     <div className={"flex flex-col gap-2"}>
                         {

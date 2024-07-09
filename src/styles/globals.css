@@ -75,6 +75,7 @@ h6 {
 /* Color/shape of close button cross 右上角叉叉 */
 .bm-cross {
   background: #bdc3c7;
+
 }
 
 /*
@@ -107,6 +108,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
   display: inline-block;
+  font-size: 28px;
 }
 
 /* Styling of overlay */
