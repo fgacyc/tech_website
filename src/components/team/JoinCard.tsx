@@ -11,7 +11,7 @@ const JoinCard = () => {
         <div className="font-xl mb-6 mt-4 flex">
           <h5>We are waiting you, join us now!</h5>
         </div>
-        <a href="https://forms.gle/LFfg5yYvkbNpr1Kq8" target="_blank">
+        <a href="https://www.fgacyc.com/get-involved" target="_blank">
           <div className="mb-6 inline-block w-auto rounded-full bg-blue-800">
             <div className="mb-2 ml-7 mr-5 mt-2 flex">
               <h5>Join Now</h5>

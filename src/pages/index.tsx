@@ -4,57 +4,13 @@ import { Button } from '@nextui-org/react'
 import {IoIosArrowForward} from "react-icons/io";
 import React from "react";
 import UIHead from "~/components/head";
+import {digitalSolutions} from "~/config";
+import Image from "next/image";
 
 export default function Home() {
 
 
-    const digitalSolutions = [
-        {
-            title: "Intelligent analysis",
-            img: "/images/index/card1.png",
-            url: "/intelligent-analysis"
-        },
-        {
-            title: "User Experience",
-            img: "/images/index/card2.png",
-            url: "/user-experience"
-        },
-        {
-            title: "Safety protection",
-            img: "/images/index/card3.png",
-            url: "/safety-protection"
-        },
-        {
-            title: "Efficient cooperation",
-            img: "/images/index/card1.png",
-            url: "/efficient-cooperation"
-        },
-        {
-            title: "Global deployment",
-            img: "/images/index/card2.png",
-            url: "/global-deployment"
-        },
-        {
-            title: "Continuous improvement",
-            img: "/images/index/card3.png",
-            url: "/continuous-improvement"
-        },
-        {
-            title: "Flexible expansion",
-            img: "/images/index/card1.png",
-            url: "/flexible-expansion"
-        },
-        {
-            title: "Technical support",
-            img: "/images/index/card2.png",
-            url: "/technical-support"
-        },
-        {
-            title: "Customizable",
-            img: "/images/index/card3.png",
-            url: "/customizable"
-        },
-    ]
+
 
 
   return (
@@ -111,14 +67,16 @@ export default function Home() {
             {/*  section3 Digital solutions */}
             <div className={"flex flex-col items-center my-32 sm:px-12 px-6"}>
                 <div className={"sm:text-[48px] text-[32px]"}>Digital solutions</div>
-                <div className={"mt-2 mb-8"}>We provide a variety of efficient digital solutions to help you improve
-                    business efficiency and user experience.
+                <div className={"mt-2 mb-8"}>We provide a variety of efficient digital solutions to help our church improve
+                    efficiency and user experience.
                 </div>
                 <div className={"grid sm:grid-cols-3 grid-cols-2 gap-8 w-full "}>
                     {
                         digitalSolutions.map((solution) => {
                             return <div key={solution.title} className={"flex flex-col items-center"}>
-                                <img src={solution.img} alt={solution.title} className={"cursor-pointer object-cover"}/>
+                                <Image src={solution.img} alt={solution.title}
+                                       width={300} height={300}
+                                       className={"cursor-pointer object-cover rounded-lg"}/>
                                 <div className={"sm:text-[24px] text-base mt-4 mb-4"}>{solution.title}</div>
                             </div>
                         })
@@ -130,15 +88,14 @@ export default function Home() {
             {/*  section4  learn more*/}
             <div className={"flex flex-col items-center my-32 px-12"}>
                 <div className={"text-[48px]"}>Learn more about us</div>
-                <div className={"mt-2 mb-8"}>Be part of our tech community. Sign up for our newsletter and stay abreast
+                <div className={"mt-2 mb-8"}>Be part of our tech community. subscribe to our newsletter  and stay abreast
                     of the latest industry trends.
                 </div>
                 <div className={""}>
                     <input type="email" className={"rounded-full bg-[#2F323A] px-4 py-2 w-[300px] my-4"}
                            placeholder={"Enter your email address"}/>
-                    <button className={"rounded-full bg-[#1A2F8A] px-4 py-2 sM:ml-6"}>Subscribe</button>
+                    <button className={"rounded-full bg-[#1A2F8A] px-4 py-2 sm:ml-6"}>Subscribe</button>
                 </div>
-
             </div>
 
         </main>

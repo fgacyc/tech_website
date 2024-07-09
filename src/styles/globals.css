@@ -10,7 +10,7 @@
 :root {
   font-family: Segoe UI;
   background-color: #1d2129;
-  user-select: none;
+  /*user-select: none;*/
 }
 
 h1 {
