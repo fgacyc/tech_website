@@ -3,10 +3,13 @@ import React from "react";
 import UIHead from "~/components/head";
 import {digitalSolutions} from "~/config";
 import Image from "next/image";
+import {createSubscribe} from "~/api/subscription";
 
 export default function Home() {
     const [email, setEmail] = React.useState<string>("");
-    const emialRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+
 
     const subscribe = () => {
         if (email === "") {
@@ -14,8 +17,16 @@ export default function Home() {
             return;
         }
 
-        if (emialRegex.test(email)) {
+        if (emailRegex.test(email)) {
             console.log("email:", email);
+            alert("Subscription failed")
+            // void createSubscribe(email).then((res) => {
+            //     if(res.status){
+            //         alert("Subscription successful")
+            //     }else{
+            //         alert("Subscription failed")
+            //     }
+            // })
         } else {
            alert("Please enter a valid email address")
         }

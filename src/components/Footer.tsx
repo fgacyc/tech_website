@@ -103,8 +103,11 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            {/*  href="mailto:fgacyc.technology@gmail.com"*/}
             <div className={"text-center my-10 relative"}>
-                <div>© {new Date().getFullYear()} FGA TECH. All Rights Reserved.</div>
+                <div>© {new Date().getFullYear()} <span>
+                    <a href="mailto:fgacyc.technology@gmail.com" className={"text-blue-500"}>FGA TECH</a>
+                </span>. All Rights Reserved.</div>
             </div>
         </div>
     )
