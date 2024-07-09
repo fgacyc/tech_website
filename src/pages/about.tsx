@@ -1,7 +1,5 @@
-import Image from "next/image";
 import React from "react";
 import SectionHeader from "~/components/SectionHeader";
-import Head from "next/head";
 import UIHead from "~/components/head";
 
 // TODO

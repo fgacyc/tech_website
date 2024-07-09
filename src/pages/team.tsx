@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Profile from "~/components/Profile";
 import SectionHeader from "~/components/SectionHeader";
 import JoinCard from "~/components/team/JoinCard";
-import Head from "next/head";
 import UIHead from "~/components/head";
 
 export type TeamMember = {

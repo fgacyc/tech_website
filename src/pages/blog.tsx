@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import BlogCard from "~/components/blog/BlogCard";
-import Head from "next/head";
 import UIHead from "~/components/head";
 import SectionHeader from "~/components/SectionHeader";
 

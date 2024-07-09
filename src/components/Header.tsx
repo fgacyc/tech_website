@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import Link from "next/link";
-import {useRouter} from "next/router";
 import {slide as Menu} from 'react-burger-menu';
 import {IoMdMenu} from "react-icons/io";
+import {useRouter} from "next/router";
 
 const Header = () => {
     const navItems = [
@@ -13,11 +13,12 @@ const Header = () => {
     ]
     const router = useRouter()
     const [isOpen, setIsOpen] = useState<boolean>(false)
-
+    const path = router.pathname
+    const isHidden = path === "/terms-of-service" || path === "/privacy-policy"
 
 
     return (
-        <div className={"bg-black text-white flex sm:px-12 px-6 justify-between h-[72px] w-full"}>
+        <div className={`bg-black text-white flex sm:px-12 px-6 justify-between h-[72px] w-full ${isHidden && "hidden"}`}>
             <div className={"flex items-center w-[72px] sm:hidden "}
                     onClick={() => router.push("/")}
             >

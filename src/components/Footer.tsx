@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Status from "~/components/status";
+import {useRouter} from "next/router";
 
 const Footer = () => {
     const navItems = [
@@ -30,32 +31,35 @@ const Footer = () => {
         {
             image: "/icons/github.svg",
             alt: "GitHub",
-            href: "https://github.com/fgacyc",
+            href: "#"
         },
         {
             image: "/icons/instagram.svg",
             alt: "Instagram",
-            href: "https://www.instagram.com/fga_tech/"
+            href: "#"
         },
         {
             image: "/icons/facebook.svg",
             alt: "Facebook",
-            href: "https://www.facebook.com/FGATECH/"
+            href: "#"
         },
         {
             image: "/icons/thread.svg",
             alt: "Twitter",
-            href: "https://twitter.com/fga_tech"
+            href: "#"
         },
         {
             image: "/icons/youtube.svg",
             alt: "YouTube",
-            href: "https://www.youtube.com/channel/UCX1V3f5zXZy0JZQJ6rX4aJQ"
+            href: "#"
         },
     ]
+    const router = useRouter()
+    const path = router.pathname
+    const isHidden = path === "/terms-of-service" || path === "/privacy-policy"
 
     return (
-        <div className={"text-white sm:px-12 px-6 pt-12"}>
+        <div className={`text-white sm:px-12 px-6 pt-12 ${isHidden && "hidden"}`}>
             <div className={"flex justify-between flex-wrap"}>
                 <img src="/FGA_Tech_Logo.png" alt="FGA_Tech_Logo" className={"w-20 h-20 float-right"}/>
                 <div className={"mb-4"}>

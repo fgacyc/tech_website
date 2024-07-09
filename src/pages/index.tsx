@@ -1,6 +1,3 @@
-import Head from "next/head";
-import Link from "next/link";
-import { Button } from '@nextui-org/react'
 import {IoIosArrowForward} from "react-icons/io";
 import React from "react";
 import UIHead from "~/components/head";
