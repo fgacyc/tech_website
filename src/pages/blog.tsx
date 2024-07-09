@@ -2,45 +2,32 @@ import React, { useEffect, useState } from "react";
 import BlogCard from "~/components/blog/BlogCard";
 import UIHead from "~/components/head";
 import SectionHeader from "~/components/SectionHeader";
+import {getBlogs} from "~/api/blog";
+import {type Blog} from "~/api/interfaces";
 
-type Blog = {
-  id: number;
-  cover: string;
-  title: string;
-  description: string;
-  content: string;
-  author: string;
-  avatar: string;
-  created_at: string;
-  updated_at: string;
-};
+// type Blog = {
+//   id: number;
+//   cover: string;
+//   title: string;
+//   description: string;
+//   content: string;
+//   author: string;
+//   avatar: string;
+//   created_at: string;
+//   updated_at: string;
+// };
 
-const HOST_URL = process.env.NEXT_PUBLIC_HOST_URL;
 
-const Blog = () => {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
+const BlogPage = ({allBlogData}: { allBlogData: Blog[] }) => {
   const [searchedBlogs, setSearchedBlogs] = useState<Blog[]>([]);
   const [searchText, setSearchText] = useState<string>("");
 
-  useEffect(() => {
-    const getBlogs = async () => {
-      try {
-        const res = await fetch(`${HOST_URL}/posts`);
-        const data  :Blog[] = await res.json() as Blog[];
-        setBlogs(data);
-        setSearchedBlogs(data);
-      } catch (error) {
-        console.error("Error during getBlogs:", error);
-      }
-    };
-    void getBlogs();
-  }, []);
 
   const handleSearch = () => {
-    const filtered = blogs.filter((blog) => {
-      const { title, description, content, author } = blog;
+    const filtered = allBlogData.filter((blog) => {
+      const { title, description, content, published_by } = blog;
       const searchString =
-        `${title} ${description} ${content} ${author}`.toLowerCase();
+        `${title} ${description} ${content} ${published_by}`.toLowerCase();
       return searchString.includes(searchText.toLowerCase());
     });
 
@@ -74,17 +61,18 @@ const Blog = () => {
       {/*<div className="flex flex-col  py-9 xl:flex-row xl:items-center xl:justify-between">*/}
       {/*</div>*/}
       <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-3 lg:grid-cols-4 sm:px-12  px-6">
-        {searchedBlogs.length > 0 ? (
-            searchedBlogs.map((blog: Blog, index) => {
+        {allBlogData.length > 0 ? (
+            allBlogData.map((blog: Blog, index) => {
               return (
                   <BlogCard
                       key={index}
                       title={blog.title}
                       desc={blog.description}
-                      author={blog.author}
-                      date={blog.updated_at}
-                      imgPath={blog.cover}
+                      author={blog.published_by}
+                      date={blog.published_at}
+                      imgPath={blog.picture}
                       profilePicPath={blog.avatar}
+                      category={blog.category}
                   />
               );
             })
@@ -100,4 +88,14 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogPage;
+
+
+export const getStaticProps  = async () => {
+  const allBlogData:Blog[] =await getBlogs() ;
+  return {
+    props: {
+      allBlogData,
+    },
+  };
+}

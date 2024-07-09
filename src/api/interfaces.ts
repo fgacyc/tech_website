@@ -18,11 +18,30 @@ export  interface Product {
     description : string
     picture : string
     url : string
+    launch_at : string
 }
 
 
 export interface ProductsResponse {
     data : Product[]
+    status : boolean
+    message : string
+}
+
+export  interface  Blog {
+    id : number
+    title : string
+    description : string
+    picture : string
+    category : string
+    published_at : string
+    avatar : string
+    content : string
+    published_by : string
+}
+
+export interface BlogsResponse {
+    data : Blog[]
     status : boolean
     message : string
 }
