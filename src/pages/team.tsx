@@ -33,7 +33,7 @@ export default  function TeamPage({ allTeamsData }: { allTeamsData: Member[] }) 
   );
 };
 
-export const getServerSideProps  = async () => {
+export const getStaticProps  = async () => {
   const allTeamsData:Member[] =await getTeams() ;
   return {
     props: {
