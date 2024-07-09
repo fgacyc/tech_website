@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import SectionHeader from "~/components/SectionHeader";
+import Head from "next/head";
 
 // TODO
 // 1. Set responsive view
@@ -8,6 +9,10 @@ import SectionHeader from "~/components/SectionHeader";
 const About = () => {
   return (
     <>
+      <Head>
+        <title>FGA TECH - About</title>
+        <link rel="icon" href="/FGA_TECH.png" />
+      </Head>
       <div className="bg-[#1d2129] text-white ">
         <SectionHeader
             title="About"

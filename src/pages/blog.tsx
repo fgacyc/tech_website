@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import BlogCard from "~/components/blog/BlogCard";
+import Head from "next/head";
 
 type Blog = {
   id: number;
@@ -47,6 +48,10 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-[#1d2129] px-12">
+      <Head>
+        <title>FGA TECH - Blog</title>
+        <link rel="icon" href="/FGA_TECH.png" />
+      </Head>
       <div className="flex flex-col  py-9 xl:flex-row xl:items-center xl:justify-between">
         <div className="mb-5 text-white xl:mb-0">
           <h1 className="mb-1.5">Blog</h1>

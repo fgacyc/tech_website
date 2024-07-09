@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Profile from "~/components/Profile";
 import SectionHeader from "~/components/SectionHeader";
 import JoinCard from "~/components/team/JoinCard";
+import Head from "next/head";
 
 export type TeamMember = {
   avatar: string;
@@ -41,6 +42,10 @@ const Team = () => {
   return (
     <>
       <div className="bg-[#1d2129] text-white">
+        <Head>
+          <title>FGA TECH - Team</title>
+          <link rel="icon" href="/FGA_TECH.png" />
+        </Head>
         <SectionHeader
           title="Team"
           desc="Our Professional Team, committed to providing the best service."
