@@ -1,7 +1,6 @@
 import React from 'react'
 import SectionHeader from "~/components/SectionHeader";
 import UIHead from "~/components/head";
-import Link from "next/link";
 import ProductCard from "~/components/product-card";
 import type {Product} from "~/api/interfaces";
 import {getProducts} from "~/api/product";
