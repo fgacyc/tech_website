@@ -7,7 +7,7 @@ import UIHead from "~/components/head";
 const Products = () => {
   return (
     <>
-      <div className="m-12 ml-17">
+      <div className="mb-12 ">
           <UIHead title={"FGA TECH - Products"}/>
           <SectionHeader
               title="Products"

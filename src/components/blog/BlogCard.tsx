@@ -15,18 +15,18 @@ const BlogCard = (props: BlogCardProps) => {
     fileName.endsWith(".jpg") ? fileName.slice(0, -4) + ".png" : fileName;
 
   return (
-    <div className="mb-16 mr-5 flex flex-col md:mb-28 md:flex-row">
+    <div className="md:mb-28  sm:w-auto w-full ">
       <Image
         src={props.imgPath}
         alt="Blog Image"
         width={250}
         height={250}
-        className="mr-4 rounded-xl"
+        className="mr-4 rounded-xl w-full object-cover h-[250px]"
       ></Image>
-      <div className="mt-5 w-[275px] text-white md:mt-0 md:w-[325px]">
+      <div className="mt-5 text-white md:mt-0">
         <h6 className="text-[#00f]">Tech</h6>
-        <h4 className="my-2.5">{props.title}</h4>
-        <h5>{props.desc}</h5>
+        <h4 className="my-2.5 font-bold h-[60px]">{props.title}</h4>
+        <h5 className={"line-clamp-5"}>{props.desc}</h5>
         <div className="mt-5 flex md:mt-10">
           <Image
             src={changeExtensionFromJPGtoPNG(props.profilePicPath)}

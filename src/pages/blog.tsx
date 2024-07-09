@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import BlogCard from "~/components/blog/BlogCard";
 import Head from "next/head";
 import UIHead from "~/components/head";
+import SectionHeader from "~/components/SectionHeader";
 
 type Blog = {
   id: number;
@@ -48,44 +49,46 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1d2129] px-12">
+    <div className="min-h-screen bg-[#1d2129]">
       <UIHead title={"FGA TECH - Blog"}/>
-      <div className="flex flex-col  py-9 xl:flex-row xl:items-center xl:justify-between">
-        <div className="mb-5 text-white xl:mb-0">
-          <h1 className="mb-1.5">Blog</h1>
-          <h3>Your official source for FGA Tech Research news and updates</h3>
-        </div>
-        <div className="relative h-12 w-[280px] rounded-xl border border-[#8d8d8d] bg-[#252525] sm:w-[327px]">
+      <div className={"flex items-end justify-between mb-10 flex-wrap"}>
+        <SectionHeader
+            title="Blog"
+            desc="Your official source for FGA Tech Research news and updates."
+        ></SectionHeader>
+        <div className="relative h-12  rounded-xl border border-[#8d8d8d] bg-[#252525] sm:w-[327px] w-full  sm:mr-12 mr-6 mt-4 ml-6">
           <input
               type="text"
               className="h-12 w-[225px] bg-transparent pl-3 text-white focus:outline-none sm:w-[275px]"
-            onChange={(e) => setSearchText(e.target.value)}
+              onChange={(e) => setSearchText(e.target.value)}
           />
           <div className="absolute right-4 top-0 flex h-12 items-center justify-center">
             <img
-              src="/icons/blog_search.svg"
-              alt="Search Icon"
-              className="cursor-pointer"
-              onClick={handleSearch}
+                src="/icons/blog_search.svg"
+                alt="Search Icon"
+                className="cursor-pointer"
+                onClick={handleSearch}
             />
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between">
+      {/*<div className="flex flex-col  py-9 xl:flex-row xl:items-center xl:justify-between">*/}
+      {/*</div>*/}
+      <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-3 lg:grid-cols-4 sm:px-12  px-6">
         {searchedBlogs.length > 0 ? (
-          searchedBlogs.map((blog: Blog, index) => {
-            return (
-              <BlogCard
-                key={index}
-                title={blog.title}
-                desc={blog.description}
-                author={blog.author}
-                date={blog.updated_at}
-                imgPath={blog.cover}
-                profilePicPath={blog.avatar}
-              />
-            );
-          })
+            searchedBlogs.map((blog: Blog, index) => {
+              return (
+                  <BlogCard
+                      key={index}
+                      title={blog.title}
+                      desc={blog.description}
+                      author={blog.author}
+                      date={blog.updated_at}
+                      imgPath={blog.cover}
+                      profilePicPath={blog.avatar}
+                  />
+              );
+            })
         ) : (
           <h3 className="text-white">
             No blogs found :&lt;
