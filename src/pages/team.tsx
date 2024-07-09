@@ -3,41 +3,14 @@ import Profile from "~/components/Profile";
 import SectionHeader from "~/components/SectionHeader";
 import JoinCard from "~/components/team/JoinCard";
 import UIHead from "~/components/head";
-
-export type TeamMember = {
-  avatar: string;
-  created_at: string;
-  email: string;
-  github_url: string;
-  id: number;
-  instagram_url: string;
-  linkedin_url: string;
-  name: string;
-  position: string;
-  twitter_url: string;
-  updated_at: string;
-};
-
-const HOST_URL = process.env.NEXT_PUBLIC_HOST_URL;
+import {getTeams} from "~/api/teams";
+import {Member} from "~/api/interfaces";
 
 
-const Team = () => {
-  const [members, setMembers] = React.useState<TeamMember[]>([]);
 
-  useEffect(() => {
-    const getMembers = async () => {
-      try {
-        const  res = await fetch(`${HOST_URL}/members`);
-        const data: TeamMember[] = await res.json() as TeamMember[];
-        console.log(data);
-
-        setMembers(data);
-      } catch (error) {
-        console.error("Error during getBlogs:", error);
-      }
-    };
-    void getMembers();
-  }, []);
+export default  function Team({ allTeamsData }: { allTeamsData: Member[] }) {
+  // sort the data by id
+  const data = allTeamsData.sort((a, b) => { return a.id - b.id; });
 
   return (
     <>
@@ -50,7 +23,7 @@ const Team = () => {
 
         <div className="mt-9 flex flex-col items-center ">
           <div className="grid w-[90%] grid-cols-1 gap-x-2 gap-y-12 md:grid-cols-3 lg:grid-cols-4">
-            {members.map((m, index) => {
+            {allTeamsData.map((m, index) => {
               return <Profile key={index} member={m}/>;
             })}
           </div>
@@ -62,4 +35,15 @@ const Team = () => {
   );
 };
 
-export default Team;
+
+
+
+
+export async function getStaticProps() {
+  const allTeamsData:Member[] =await getTeams() ;
+  return {
+    props: {
+      allTeamsData,
+    },
+  };
+}
