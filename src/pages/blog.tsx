@@ -35,7 +35,7 @@ const BlogPage = ({allBlogData}: { allBlogData: Blog[] }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1d2129]">
+    <div className="min-h-screen bg-[#1d2129] mt-[72px]">
       <UIHead title={"FGA TECH - Blog"}/>
       <div className={"flex items-end justify-between mb-10 flex-wrap"}>
         <SectionHeader
@@ -60,7 +60,9 @@ const BlogPage = ({allBlogData}: { allBlogData: Blog[] }) => {
       </div>
       {/*<div className="flex flex-col  py-9 xl:flex-row xl:items-center xl:justify-between">*/}
       {/*</div>*/}
-      <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-3 lg:grid-cols-4 sm:px-12  px-6">
+      <div className={`grid gap-x-12 gap-y-12   sm:px-12  px-6
+         2xl:grid-cols-4  lg:grid-cols-3 md:grid-cols-2  grid-cols-1
+      `}>
         {allBlogData.length > 0 ? (
             allBlogData.map((blog: Blog, index) => {
               return (

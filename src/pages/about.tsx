@@ -9,7 +9,7 @@ const About = () => {
   return (
     <>
       <UIHead title={"FGA TECH - About"}/>
-      <div className="bg-[#1d2129] text-white ">
+      <div className="bg-[#1d2129] text-white mt-[72px]">
         <SectionHeader
             title="About"
             desc="The road of our technology development blessed by God."

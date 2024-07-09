@@ -14,25 +14,26 @@ interface BlogCardProps {
 const BlogCard = (props: BlogCardProps) => {
 
   return (
-    <div className="md:mb-28  sm:w-auto w-full ">
+    <div className="md:mb-28  sm:w-auto w-full min-w-[320px] border rounded-xl">
       <img
         src={props.imgPath}
         alt="Blog Image"
         className="mr-4 rounded-xl w-full h-[250px] cursor-pointer object-cover "
       ></img>
-      <div className="mt-5 text-white md:mt-0">
-        <h6 className="text-[#00f]">{props.category}</h6>
+      <div className="mt-5 text-white md:mt-0 p-4">
+        <span className="text-gray-600 bg-[rgb(229,231,235)] py-1 px-2 leading-[30px] rounded">{props.category}</span>
         <h4 className="my-2.5 font-bold h-[60px] cursor-pointer">{props.title}</h4>
         <h5 className={"line-clamp-5"}>{props.desc}</h5>
-        <div className="mt-5 flex md:mt-10">
+
+        <div className="mt-5 flex  items-center">
           <img
-            src={props.profilePicPath}
-            alt="Blog Profile"
-            className="mr-4 rounded-full w-12 h-12"
+              src={props.profilePicPath}
+              alt="Blog Profile"
+              className="mr-4 rounded-full w-12 h-12"
           ></img>
-          <div>
-            <h6>{props.author}</h6>
-            <h6 className="mt-2 text-[#adb5bd]">{convertToEastEightZone(props.date)}</h6>
+
+          <div className="text-sm text-[#6e6e73]">
+            <span className="font-medium">{props.author}</span> · {convertToEastEightZone(props.date)}
           </div>
         </div>
       </div>

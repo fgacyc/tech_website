@@ -5,16 +5,32 @@ import {digitalSolutions} from "~/config";
 import Image from "next/image";
 
 export default function Home() {
+    const [email, setEmail] = React.useState<string>("");
+    const emialRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    const subscribe = () => {
+        if (email === "") {
+            alert("Please enter your email address")
+            return;
+        }
+
+        if (emialRegex.test(email)) {
+            console.log("email:", email);
+        } else {
+           alert("Please enter a valid email address")
+        }
+    };
+
 
   return (
     <>
         <UIHead title={"FGA TECH"}/>
-        <main className="bg-[#1D2129] text-white">
+        <main className="bg-[#1D2129] text-white mt-[72px]">
             {/*  section1 landing */}
             <img src="/images/index/bg.png" alt="background"
-                 className={"absolute bottom-1/2 transform translate-y-1/2 sm:w-1/2 -z-0"}/>
+                 className={"absolute bottom-1/2 transform translate-y-1/2 sm:w-1/2 z-0"}/>
             <img src="/images/index/phone-3.png" alt="phones"
-                 className={"absolute right-12 bottom-1/2 transform translate-y-1/2 sm:block hidden"}/>
+                 className={"absolute right-12 bottom-1/2 transform translate-y-1/2 sm:block hidden z-0"}/>
             <div
                 className="font-bold sm:text-[48px] text-[32px] text-white h-[calc(100vh-88px)] flex flex-col items-start justify-center relative z-50 sm:px-12 px-6">
                 {/*<div className={""}>*/}
@@ -86,8 +102,11 @@ export default function Home() {
                 </div>
                 <div className={""}>
                     <input type="email" className={"rounded-full bg-[#2F323A] px-4 py-2 w-[300px] my-4"}
+                            onChange={(e) => setEmail(e.target.value)}
                            placeholder={"Enter your email address"}/>
-                    <button className={"rounded-full bg-[#1A2F8A] px-4 py-2 sm:ml-6"}>Subscribe</button>
+                    <button className={"rounded-full bg-[#1A2F8A] px-4 py-2 sm:ml-6"}
+                            onClick={subscribe}
+                    >Subscribe</button>
                 </div>
             </div>
 

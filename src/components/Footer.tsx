@@ -13,16 +13,16 @@ const Footer = () => {
 
     const products = [
         {
-            name: "Product 1",
-            link: "/product1"
+            name: "FGACYC Website",
+            link: "https://fgacyc.com/"
         },
         {
-            name: "Product 2",
-            link: "/product2"
+            name: "FGA Mobile App",
+            link: "#"
         },
         {
-            name: "Product 3",
-            link: "/product3"
+            name: "Song bank",
+            link: "https://songbank.fgacyc.com/"
         }
     ]
 
@@ -31,7 +31,7 @@ const Footer = () => {
         {
             image: "/icons/github.svg",
             alt: "GitHub",
-            href: "#"
+            href: "https://github.com/fgacyc"
         },
         {
             image: "/icons/instagram.svg",

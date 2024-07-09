@@ -12,7 +12,7 @@ export default  function TeamPage({ allTeamsData }: { allTeamsData: Member[] }) 
 
   return (
     <>
-      <div className="bg-[#1d2129] text-white">
+      <div className="bg-[#1d2129] text-white mt-[72px]">
         <UIHead title={"FGA TECH - Team"}/>
         <SectionHeader
             title="Team"
