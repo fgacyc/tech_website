@@ -5,7 +5,7 @@ import ProductCard from "~/components/product-card";
 import type {Product} from "~/api/interfaces";
 import {getProducts} from "~/api/product";
 
-const Products = ({allProductData}: { allProductData: Product[] }) => {
+export default function ProductsPage({allProductData}: { allProductData: Product[] })  {
   return (
       <>
           <div className="mb-12 ">
@@ -26,14 +26,21 @@ const Products = ({allProductData}: { allProductData: Product[] }) => {
   )
 }
 
-export default Products
-
-
-export async function getStaticProps() {
-    const allProductData:Product[] = await getProducts();
-    return {
-        props: {
-            allProductData,
-        },
-    };
+export const getStaticProps = async () => {
+  const allProductData:Product[] = await getProducts();
+  return {
+    props: {
+      allProductData,
+    },
+  };
 }
+
+
+// export async function getStaticProps() {
+//     const allProductData:Product[] = await getProducts();
+//     return {
+//         props: {
+//             allProductData,
+//         },
+//     };
+// }

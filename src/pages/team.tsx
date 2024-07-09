@@ -7,7 +7,7 @@ import { type Member} from "~/api/interfaces";
 
 
 
-export default  function Team({ allTeamsData }: { allTeamsData: Member[] }) {
+export default  function TeamPage({ allTeamsData }: { allTeamsData: Member[] }) {
   const data = allTeamsData.sort((a, b) => { return a.id - b.id; });
 
   return (
@@ -33,11 +33,7 @@ export default  function Team({ allTeamsData }: { allTeamsData: Member[] }) {
   );
 };
 
-
-
-
-
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const allTeamsData:Member[] =await getTeams() ;
   return {
     props: {
@@ -45,3 +41,14 @@ export async function getStaticProps() {
     },
   };
 }
+
+
+
+// export async function getStaticProps() {
+//   const allTeamsData:Member[] =await getTeams() ;
+//   return {
+//     props: {
+//       allTeamsData,
+//     },
+//   };
+// }
