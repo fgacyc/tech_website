@@ -10,7 +10,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className={"font-sf"}>{children}</main>
       <Footer />
     </>
   );

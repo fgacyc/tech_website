@@ -18,7 +18,13 @@ export default function ProductsPage({allProductData}: { allProductData: Product
           <div className={"grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1  gap-10 sm:px-12 px-6 w-full"}>
               {
                   allProductData.length > 0 && allProductData.map((data, index) =>
-                      <ProductCard src={data.picture} alt={data.name} title={data.name} span={data.description} url={data.url} key={index} />
+                      <ProductCard src={data.picture}
+                                   alt={data.name}
+                                   title={data.name}
+                                   description={data.description}
+                                   url={data.url}
+                                   launch_at={data.launch_at}
+                                   key={index} />
                   )
               }
           </div>
