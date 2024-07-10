@@ -21,7 +21,7 @@ const Footer = () => {
             link: "#"
         },
         {
-            name: "Song bank",
+            name: "Song Bank",
             link: "https://songbank.fgacyc.com/"
         }
     ]
@@ -36,12 +36,12 @@ const Footer = () => {
         {
             image: "/icons/instagram.svg",
             alt: "Instagram",
-            href: "#"
+            href: "https://www.instagram.com/fgacyc/"
         },
         {
             image: "/icons/facebook.svg",
             alt: "Facebook",
-            href: "#"
+            href: "https://www.facebook.com/FGACYC/"
         },
         {
             image: "/icons/thread.svg",
@@ -51,7 +51,7 @@ const Footer = () => {
         {
             image: "/icons/youtube.svg",
             alt: "YouTube",
-            href: "#"
+            href: "https://www.youtube.com/@fgacyc"
         },
     ]
     const router = useRouter()
