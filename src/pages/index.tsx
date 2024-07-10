@@ -43,7 +43,7 @@ export default function Home() {
             <img src="/images/index/phone-3.png" alt="phones"
                  className={"absolute right-12 bottom-1/2 transform translate-y-1/2 sm:block hidden z-0"}/>
             <div
-                className="font-bold sm:text-[48px] text-[32px] text-white h-[calc(100vh-88px)] flex flex-col items-start justify-center relative z-50 sm:px-12 px-6">
+                className="font-bold sm:text-[48px] text-[32px] text-white h-[calc(100vh-88px)] flex flex-col items-start justify-center relative  sm:px-12 px-6">
                 {/*<div className={""}>*/}
                 {/*    Spreading the Gospel,*/}
                 {/*</div>*/}
