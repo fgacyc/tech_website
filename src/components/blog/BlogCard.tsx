@@ -14,7 +14,7 @@ interface BlogCardProps {
 const BlogCard = (props: BlogCardProps) => {
 
   return (
-    <div className="md:mb-28  sm:w-auto w-full min-w-[320px] border rounded-xl">
+    <div className="md:mb-28  sm:w-auto w-full min-w-[320px] border-1 rounded-xl border-gray-100">
       <img
         src={props.imgPath}
         alt="Blog Image"

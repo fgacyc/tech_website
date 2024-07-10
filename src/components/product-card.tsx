@@ -12,7 +12,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({src, alt, title, span, url}) => {
     return (
-        <div className='flex flex-col  relative object-cover border rounded-xl '>
+        <div className='flex flex-col  relative object-cover rounded-xl border-1 border-gray-100'>
             <img
                 src={src}
                 alt={alt}
