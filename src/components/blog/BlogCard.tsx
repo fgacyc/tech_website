@@ -22,7 +22,7 @@ const BlogCard = (props: BlogCardProps) => {
       ></img>
       <div className="mt-5 text-white md:mt-0 p-4">
         <span className="text-gray-600 bg-[rgb(229,231,235)] py-1 px-2 leading-[30px] rounded">{props.category}</span>
-        <h4 className="my-2.5 font-bold h-[60px] cursor-pointer">{props.title}</h4>
+        <h4 className="my-2.5 font-bold h-[60px] cursor-pointer text-[20px]">{props.title}</h4>
         <h5 className={"line-clamp-5"}>{props.desc}</h5>
 
         <div className="mt-5 flex  items-center">

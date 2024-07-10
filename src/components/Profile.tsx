@@ -27,7 +27,7 @@ export default function Profile(prob: TeamMemberDataProb) {
         }
 
         <div className="mt-4">
-          <h5 className="font-bold">{name}</h5>
+          <h5 className="text-[20px] font-bold ">{name}</h5>
         </div>
         <div className="mt-1 text-[#6e6e73]">
           <h5>{role}</h5>
