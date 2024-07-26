@@ -13,7 +13,7 @@ const Footer = () => {
 
     const products = [
         {
-            name: "FGACYC Website",
+            name: "FGA CYC Website",
             link: "https://fgacyc.com/"
         },
         {

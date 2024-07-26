@@ -1,26 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BlogCard from "~/components/blog/BlogCard";
 import UIHead from "~/components/head";
 import SectionHeader from "~/components/SectionHeader";
 import {getBlogs} from "~/api/blog";
 import {type Blog} from "~/api/interfaces";
 
-// type Blog = {
-//   id: number;
-//   cover: string;
-//   title: string;
-//   description: string;
-//   content: string;
-//   author: string;
-//   avatar: string;
-//   created_at: string;
-//   updated_at: string;
-// };
-
-
-const BlogPage = ({allBlogData}: { allBlogData: Blog[] }) => {
+const BlogCardsPage = ({allBlogData}: { allBlogData: Blog[] }) => {
   const [searchedBlogs, setSearchedBlogs] = useState<Blog[]>([]);
   const [searchText, setSearchText] = useState<string>("");
+
+  console.log(allBlogData)
 
 
   const handleSearch = () => {
@@ -75,6 +64,7 @@ const BlogPage = ({allBlogData}: { allBlogData: Blog[] }) => {
                       imgPath={blog.picture}
                       profilePicPath={blog.avatar}
                       category={blog.category}
+                      blogId={blog.id}
                   />
               );
             })
@@ -90,7 +80,7 @@ const BlogPage = ({allBlogData}: { allBlogData: Blog[] }) => {
   );
 };
 
-export default BlogPage;
+export default BlogCardsPage;
 
 
 export const getStaticProps  = async () => {

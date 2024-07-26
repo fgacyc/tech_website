@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import {useRouter} from "next/router";
 
 interface BlogCardProps {
   title: string;
@@ -9,12 +10,19 @@ interface BlogCardProps {
   imgPath: string;
   profilePicPath: string;
   category: string;
+  blogId: number;
 }
 
 const BlogCard = (props: BlogCardProps) => {
+  const router = useRouter();
+  const clickHandler = () => {
+    void router.push(`/blog/${props.blogId}`)
+  };
 
   return (
-    <div className="md:mb-28  sm:w-auto w-full min-w-[320px] border-1 rounded-xl border-gray-100">
+    <div className="md:mb-28  sm:w-auto w-full min-w-[320px] border-1 rounded-xl border-gray-100"
+            onClick={clickHandler}
+    >
       <img
         src={props.imgPath}
         alt="Blog Image"
@@ -23,7 +31,7 @@ const BlogCard = (props: BlogCardProps) => {
       <div className="mt-5 text-white md:mt-0 p-4">
         <span className="text-gray-600 bg-[rgb(229,231,235)] py-1 px-2 leading-[30px] rounded">{props.category}</span>
         <h4 className="my-2.5 font-bold h-[60px] cursor-pointer text-[20px]">{props.title}</h4>
-        <h5 className={"line-clamp-5"}>{props.desc}</h5>
+        <h5 className={"line-clamp-4"}>{props.desc}</h5>
 
         <div className="mt-5 flex  items-center">
           <img

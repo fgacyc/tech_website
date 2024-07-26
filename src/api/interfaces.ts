@@ -45,3 +45,8 @@ export interface BlogsResponse {
     status : boolean
     message : string
 }
+export interface BlogResponse {
+    data : Blog
+    status : boolean
+    message : string
+}

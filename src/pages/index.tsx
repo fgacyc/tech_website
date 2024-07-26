@@ -3,7 +3,7 @@ import React from "react";
 import UIHead from "~/components/head";
 import {digitalSolutions} from "~/config";
 import Image from "next/image";
-import {createSubscribe} from "~/api/subscription";
+
 
 export default function Home() {
     const [email, setEmail] = React.useState<string>("");
