@@ -9,7 +9,7 @@ export default function MdViewer({content}: MdViewerProps) {
     // console.log(content)
 
     return (
-        <div className="bg-[#141414] h-screen text-white">
+        <div className="bg-[#1D2129] min-h-screen text-white">
             <ReactMarkdown
                 components={{
                     h1: ({node, ...props}) => <h1 className="text-2xl font-bold" {...props} />,
@@ -21,6 +21,9 @@ export default function MdViewer({content}: MdViewerProps) {
                     p: ({node, ...props}) => <p className="text-base my-4 inline-block" {...props} />,
                     ol: ({node, ...props}) => <ol className="list-decimal list-inside" {...props} />,
                     ul: ({node, ...props}) => <ul className="list-disc list-inside" {...props} />,
+                    blockquote: ({ node, ...props }) => (
+                        <blockquote className="border-l-4 border-gray-500 pl-4 italic" {...props} />
+                    ),
                 }}
                 remarkPlugins={[remarkGfm]}
                 className="mb-8"
