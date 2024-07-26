@@ -24,6 +24,9 @@ export default function MdViewer({content}: MdViewerProps) {
                     blockquote: ({ node, ...props }) => (
                         <blockquote className="border-l-4 border-gray-500 pl-4 italic" {...props} />
                     ),
+                    a: ({ node, ...props }) => (
+                        <a className="text-blue-500 hover:underline" {...props} />
+                    )
                 }}
                 remarkPlugins={[remarkGfm]}
                 className="mb-8"
