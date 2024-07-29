@@ -5,10 +5,8 @@ import {useRouter} from "next/router";
 
 const Footer = () => {
     const navItems = [
-        {name: "Blog", link: "/blog"},
-        {name: "Products", link: "/products"},
-        {name: "Team", link: "/team"},
-        {name: "About", link: "/about"}
+        {name: "FGA", link: "https://www.fga.my/"},
+        {name: "FGACYC", link: "https://www.fgacyc.com/"},
     ]
 
     const products = [
