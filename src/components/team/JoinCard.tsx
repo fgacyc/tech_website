@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const JoinCard = () => {
   return (
     <div className="flex w-full flex-col items-center pb-12 sm:p-12 px-6 mt-8">
-      <div className="w-full rounded-xl bg-gradient-to-r from-slate-900 to-slate-50 pl-12 pt-7 text-white">
+      <div className="w-full rounded-xl bg-gradient-to-r from-slate-900 to-slate-50 sm:px-10 px-5 sm:py-7 py-5 text-white">
         <div className="flex font-black">
           <h2>Join FGA Tech Team!</h2>
         </div>
@@ -13,7 +13,7 @@ const JoinCard = () => {
             accelerates the completion of the M100 mission, we want you on our team. Apply now and help us create something extraordinary together!</h5>
         </div>
         <a href="https://www.fgacyc.com/get-involved" target="_blank">
-          <div className="mb-6 inline-block w-auto rounded-full bg-blue-800">
+          <div className="inline-block w-auto rounded-full bg-blue-800">
             <div className="mb-2 ml-7 mr-5 mt-2 flex">
               <h5>Join Now</h5>
               <div className="ml-5 mt-1">
