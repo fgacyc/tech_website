@@ -18,7 +18,7 @@ const Footer = () => {
         },
         {
             name: "FGA Mobile App",
-            link: "#"
+            link: "https://www.fgacyc.com/mobile-app-download"
         },
         {
             name: "Song Bank",
