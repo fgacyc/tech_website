@@ -31,8 +31,8 @@ const BlogCard = (props: BlogCardProps) => {
       <div className="mt-5 text-white md:mt-0 p-4 flex flex-col justify-between">
         <div>
           <span className="text-gray-600 bg-[rgb(229,231,235)] py-1 px-2 leading-[30px] rounded">{props.category}</span>
-          <h4 className="my-2.5 font-bold h-[60px] cursor-pointer lg:text-[20px] text-base">{props.title}</h4>
-          <h5 className={"line-clamp-4 min-h-[100px]"}>{props.desc}</h5>
+          <h4 className="my-2.5 font-bold h-[60px] cursor-pointer lg:text-[20px] sm:text-[18px] text-base">{props.title}</h4>
+          <h5 className={"line-clamp-4 min-h-[100px] sm:text-base text-sm"}>{props.desc}</h5>
         </div>
 
         <div className="mt-5 flex  items-center">
