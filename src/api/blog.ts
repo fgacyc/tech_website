@@ -1,4 +1,4 @@
-import {BlogResponse, type BlogsResponse} from "~/api/interfaces";
+import {type BlogResponse, type BlogsResponse} from "~/api/interfaces";
 
 
 

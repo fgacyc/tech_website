@@ -18,7 +18,8 @@ export  interface Product {
     description : string
     picture : string
     url : string
-    launch_at : string
+    launch_at : string,
+    contributors : Member[]
 }
 
 

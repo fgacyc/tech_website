@@ -23,6 +23,7 @@ export default function ProductsPage({allProductData}: { allProductData: Product
                                    title={data.name}
                                    description={data.description}
                                    url={data.url}
+                                   contributors={data.contributors}
                                    launch_at={data.launch_at}
                                    key={index} />
                   )
