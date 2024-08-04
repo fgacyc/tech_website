@@ -34,7 +34,7 @@ const Footer = () => {
         {
             image: "/icons/instagram.svg",
             alt: "Instagram",
-            href: "https://www.instagram.com/fgacyc/"
+            href: "https://www.instagram.com/fgatechnology/"
         },
         {
             image: "/icons/facebook.svg",
