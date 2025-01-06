@@ -3,6 +3,7 @@ import Link from "next/link";
 import {slide as Menu} from 'react-burger-menu';
 import {IoMdMenu} from "react-icons/io";
 import {useRouter} from "next/router";
+import {hideHeaderFooter} from "~/config";
 
 const Header = () => {
     const navItems = [
@@ -14,7 +15,7 @@ const Header = () => {
     const router = useRouter()
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const path = router.pathname
-    const isHidden = path === "/terms-of-service" || path === "/privacy-policy" || path === "/acknowledgements"
+    const isHidden = hideHeaderFooter(path)
 
 
     return (

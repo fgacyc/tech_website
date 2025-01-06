@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Status from "~/components/status";
 import {useRouter} from "next/router";
+import {hideHeaderFooter} from "~/config";
 
 const Footer = () => {
     const navItems = [
@@ -54,7 +55,7 @@ const Footer = () => {
     ]
     const router = useRouter()
     const path = router.pathname
-    const isHidden = path === "/terms-of-service" || path === "/privacy-policy" || path === "/acknowledgements"
+    const isHidden = hideHeaderFooter(path)
 
     return (
         <div className={`text-white sm:px-12 px-6 pt-12 ${isHidden && "hidden"}`}>

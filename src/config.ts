@@ -45,3 +45,8 @@ export   const digitalSolutions = [
         url: "/customizable"
     },
 ]
+
+
+export const hideHeaderFooter = (path: string): boolean => {
+    return path === "/terms-of-service" || path === "/privacy-policy" || path === "/acknowledgements"
+}
