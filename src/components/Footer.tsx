@@ -54,7 +54,7 @@ const Footer = () => {
     ]
     const router = useRouter()
     const path = router.pathname
-    const isHidden = path === "/terms-of-service" || path === "/privacy-policy"
+    const isHidden = path === "/terms-of-service" || path === "/privacy-policy" || path === "/acknowledgements"
 
     return (
         <div className={`text-white sm:px-12 px-6 pt-12 ${isHidden && "hidden"}`}>

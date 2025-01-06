@@ -14,7 +14,7 @@ const Header = () => {
     const router = useRouter()
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const path = router.pathname
-    const isHidden = path === "/terms-of-service" || path === "/privacy-policy"
+    const isHidden = path === "/terms-of-service" || path === "/privacy-policy" || path === "/acknowledgements"
 
 
     return (
