@@ -6,17 +6,19 @@ import type {Product} from "~/api/interfaces";
 import {getProducts} from "~/api/product";
 
 export default function ProductsPage({allProductData}: { allProductData: Product[] })  {
+    // sort by launch date
+    const data = allProductData.sort((a, b) => { return new Date(b.launch_at).getTime() - new Date(a.launch_at).getTime(); });
     // add filter to sort by product type
     const types = ["Show All", "Event", "Tool"];
     const [selectedType, setSelectedType] = useState("SHOW ALL");
-    const [filteredData, setFilteredData] = useState(allProductData);
+    const [filteredData, setFilteredData] = useState(data);
 
     const handleTypeChange = (type: string) => {
         setSelectedType(type);
         if (type === "Show All") {
-            setFilteredData(allProductData);
+            setFilteredData(data);
         } else {
-            setFilteredData(allProductData.filter((product) => product.type === type));
+            setFilteredData(data.filter((product) => product.type === type));
         }
     };
 
