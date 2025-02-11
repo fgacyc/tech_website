@@ -10,6 +10,14 @@ import MdViewer from "~/components/md-viewer";
 
 const BlogPage = ({blogData}: { blogData: Blog }) => {
     const {title, content,description} = blogData;
+    function  formatDate(date: string) {
+       return new Date(date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    }
+
     return (
         <div>
             <UIHead title={"FGA TECH - Blog"}/>
@@ -18,6 +26,17 @@ const BlogPage = ({blogData}: { blogData: Blog }) => {
                     title={title}
                     desc={description}
                 ></SectionHeader>
+
+                <div className="flex justify-between items-center my-6 sm:mx-12 mx-6">
+                    <div className={"flex items-center"}>
+                        <img src={blogData.avatar} alt={title} className={"w-8 h-8 rounded-full object-cover"}/>
+                        <div>
+                            <div className="ml-2 text-sm">{blogData.published_by}</div>
+                            <div className={"ml-2 text-sm "}>{formatDate(blogData.published_at)}</div>
+                        </div>
+                    </div>
+
+                </div>
 
                 <div className=" flex w-full items-center justify-between sm:px-12 px-6 flex-wrap-reverse ">
                     <MdViewer content={content} />
