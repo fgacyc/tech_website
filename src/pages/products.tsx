@@ -30,7 +30,7 @@ export default function ProductsPage({allProductData}: { allProductData: Product
                   desc="Series of digital products fully meet church needs."
               ></SectionHeader>
           </div>
-            <div className="flex justify-start gap-4 sm:px-12 px-6 pb-12">
+            <div className="flex justify-start gap-4 sm:px-12 px-6 pb-12 flex-wrap">
                 {types.map((type) => (
                     <button
                         key={type}
