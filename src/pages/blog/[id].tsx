@@ -13,13 +13,13 @@ const BlogPage = ({blogData}: { blogData: Blog }) => {
     return (
         <div>
             <UIHead title={"FGA TECH - Blog"}/>
-            <div className="bg-[#1d2129] text-white mt-[72px]">
+            <div className="bg-[#1d2129] text-white mt-[72px] max-w-[800px] mx-auto">
                 <SectionHeader
                     title={title}
                     desc={description}
                 ></SectionHeader>
 
-                <div className=" flex w-full items-center justify-between sm:px-12 px-6 flex-wrap-reverse">
+                <div className=" flex w-full items-center justify-between sm:px-12 px-6 flex-wrap-reverse ">
                     <MdViewer content={content} />
                 </div>
             </div>
