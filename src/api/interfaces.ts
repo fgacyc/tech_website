@@ -19,7 +19,8 @@ export  interface Product {
     picture : string
     url : string
     launch_at : string,
-    contributors : Member[]
+    contributors : Member[],
+    type : string
 }
 
 

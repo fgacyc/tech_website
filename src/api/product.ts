@@ -7,7 +7,7 @@ export async function getProducts(){
     if(!data.status){
         throw new Error(data.message)
     }
-    //console.log(data.data)
+    // console.log(data.data)
     return data.data
 }
 
