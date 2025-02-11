@@ -17,7 +17,6 @@ const Header = () => {
     const path = router.pathname
     const isHidden = hideHeaderFooter(path)
 
-
     return (
         <div className={`bg-black text-white flex sm:px-12 px-6 justify-between h-[72px] w-full ${isHidden && "hidden"} absolute top-0 w-full z-50`}>
             <div className={"flex items-center w-[72px] sm:hidden "}
