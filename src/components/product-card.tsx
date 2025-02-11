@@ -12,7 +12,6 @@ interface ProductCardProps {
     contributors: Member[];
 }
 
-
 const ProductCard: React.FC<ProductCardProps> = ({src, alt, title, description: description, url,launch_at,contributors}) => {
     return (
         <div className='flex flex-col  relative object-cover rounded-xl border-1 border-gray-100'>
