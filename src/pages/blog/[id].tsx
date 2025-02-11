@@ -27,7 +27,7 @@ const BlogPage = ({blogData}: { blogData: Blog }) => {
                     desc={description}
                 ></SectionHeader>
 
-                <div className="flex justify-between items-center my-6 sm:mx-12 mx-6">
+                <div className="flex justify-between items-center my-8 sm:mx-12 mx-6">
                     <div className={"flex items-center"}>
                         <img src={blogData.avatar} alt={title} className={"w-8 h-8 rounded-full object-cover"}/>
                         <div>
