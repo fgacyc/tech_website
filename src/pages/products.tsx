@@ -10,7 +10,7 @@ export default function ProductsPage({allProductData}: { allProductData: Product
     const data = allProductData.sort((a, b) => { return new Date(b.launch_at).getTime() - new Date(a.launch_at).getTime(); });
     // add filter to sort by product type
     const types = ["Show All", "Event", "Tool"];
-    const [selectedType, setSelectedType] = useState("SHOW ALL");
+    const [selectedType, setSelectedType] = useState("Show All");
     const [filteredData, setFilteredData] = useState(data);
 
     const handleTypeChange = (type: string) => {

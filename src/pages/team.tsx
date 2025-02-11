@@ -19,7 +19,7 @@ export default  function TeamPage({ allTeamsData }: { allTeamsData: Member[] }) 
     const Designer = ["UI/UX Designer"];
     const Manager = ["Ministry Lead", "Ministry PIC", "Executive Director", "Technical Director", "Project Manager", "Product Operations"];
 
-    const [selectedRole, setSelectedRole] = useState("SHOW ALL");
+    const [selectedRole, setSelectedRole] = useState("Show All");
     const [filteredData, setFilteredData] = useState<Member[]>(data);
 
     const handleRoleChange = (role: string) => {
