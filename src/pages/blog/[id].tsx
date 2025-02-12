@@ -2,7 +2,6 @@ import type {Blog} from "~/api/interfaces";
 import {getBlog, getBlogs} from "~/api/blog";
 import {type GetStaticPaths, type GetStaticProps} from "next";
 import UIHead from "~/components/head";
-import SectionHeader from "~/components/SectionHeader";
 import React from "react";
 import MdViewer from "~/components/md-viewer";
 
@@ -18,28 +17,38 @@ const BlogPage = ({blogData}: { blogData: Blog }) => {
         });
     }
 
+    function readingTime(content: string) {
+        const wordsPerMinute = 200;
+        const textLength = content.split(" ").length;
+        return Math.ceil(textLength / wordsPerMinute);
+    }
+
     return (
         <div>
             <UIHead title={"FGA TECH - Blog"}/>
             <div className="bg-[#1d2129] text-white mt-[72px] max-w-[800px] mx-auto">
-                <SectionHeader
-                    title={title}
-                    desc={description}
-                ></SectionHeader>
+                <div className="flex flex-col  pt-12 text-white sm:px-12 px-6">
+                    <h1 className={"mb-4"}>{title}</h1>
+                    <h5 className={"text-gray-400"}>{description}</h5>
+                </div>
+                {/*<SectionHeader*/}
+                {/*    title={title}*/}
+                {/*    desc={description}*/}
+                {/*></SectionHeader>*/}
 
-                <div className="flex justify-between items-center my-8 sm:mx-12 mx-6">
+                <div className="flex justify-between items-center my-6 sm:mx-12 mx-6">
                     <div className={"flex items-center"}>
-                        <img src={blogData.avatar} alt={title} className={"w-8 h-8 rounded-full object-cover"}/>
+                        <img src={blogData.avatar} alt={title} className={"w-10 h-10 rounded-full object-cover"}/>
                         <div>
                             <div className="ml-2 text-sm">{blogData.published_by}</div>
-                            <div className={"ml-2 text-sm "}>{formatDate(blogData.published_at)}</div>
+                            <div className={"ml-2 text-[12px] text-gray-400"}>{formatDate(blogData.published_at)} - {readingTime(content)} min read</div>
                         </div>
                     </div>
 
                 </div>
 
                 <div className=" flex w-full items-center justify-between sm:px-12 px-6 flex-wrap-reverse ">
-                    <MdViewer content={content} />
+                    <MdViewer content={content}/>
                 </div>
             </div>
         </div>

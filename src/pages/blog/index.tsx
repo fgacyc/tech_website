@@ -9,7 +9,7 @@ const BlogCardsPage = ({allBlogData}: { allBlogData: Blog[] }) => {
   const [searchedBlogs, setSearchedBlogs] = useState<Blog[]>([]);
   const [searchText, setSearchText] = useState<string>("");
 
-  console.log(allBlogData)
+  // console.log(allBlogData)
 
 
   const handleSearch = () => {
